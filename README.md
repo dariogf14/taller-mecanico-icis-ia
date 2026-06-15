@@ -276,16 +276,18 @@ http://localhost:3000
 ## Capturas
 
 ![Tabla clientes](docs/capturas/tabla_clientes.png)
+![Tabla vehiculos](docs/capturas/tabla_vehiculos.png)
+![Tabla mecanicos](docs/capturas/tabla_mecanicos.png)
+![Tabla reparaciones](docs/capturas/tabla_reparaciones.png)
 
-- Tabla `clientes`.
-- Tabla `vehiculos`.
-- Tabla `mecanicos`.
-- Tabla `reparaciones`.
-- Colección `diagnosticos` en MongoDB Atlas.
-- Dashboard.
-- Listado de vehículos.
-- Listado de reparaciones con filtros.
-- Listado de diagnósticos.
+![Collección diagnósticos](docs/capturas/mongodb_diagnosticos.png)
+
+![App web - Inicio](docs/capturas/app_inicio.png)
+![App web - Clientes](docs/capturas/app_clientes.png)
+![App web - Vehículos](docs/capturas/app_vehiculos.png)
+![App web - Mecánicos](docs/capturas/app_mecanicos.png)
+![App web - Reparaciones](docs/capturas/app_reparaciones.png)
+![App web - Diagnósticos](docs/capturas/app_diagnosticos.png)
 
 ---
 
@@ -306,11 +308,7 @@ PENDIENTE_AÑADIR_URL_BACKEND
 Repositorio GitHub:
 
 ```txt
-PENDIENTE_AÑADIR_URL_GITHUB
+https://github.com/dariogf14/taller-mecanico-icis-ia.git
 ```
 
 ---
-
-## Comentarios finales
-
-El proyecto cumple los requisitos principales del enunciado: usa MySQL con relaciones, MongoDB para datos flexibles, Sequelize/Mongoose, CRUD sobre dos tablas MySQL, CRUD sobre una colección MongoDB, filtros, validaciones, navegación entre entidades y dashboard.
