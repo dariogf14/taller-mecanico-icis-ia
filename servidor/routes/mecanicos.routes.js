@@ -2,17 +2,11 @@ const express = require("express");
 const router = express.Router();
 
 const {
-  obtenerReparaciones,
-  obtenerReparacionPorId,
-  crearReparacion,
-  actualizarReparacion,
-  borrarReparacion,
-} = require("../controllers/reparaciones.controller");
+  obtenerMecanicos,
+  obtenerMecanicoPorId,
+} = require("../controllers/mecanicos.controller");
 
-router.get("/", obtenerReparaciones);
-router.get("/:id", obtenerReparacionPorId);
-router.post("/", crearReparacion);
-router.put("/:id", actualizarReparacion);
-router.delete("/:id", borrarReparacion);
+router.get("/", obtenerMecanicos);
+router.get("/:id", obtenerMecanicoPorId);
 
 module.exports = router;
