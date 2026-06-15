@@ -1,0 +1,73 @@
+[
+  {
+    "id_reparacion_mysql": 1,
+    "titulo": "Fallo de encendido en cilindro 1",
+    "descripcion": "La diagnosis OBD indica fallo intermitente en el cilindro 1. Se recomienda revisar bobina, bujía e inyector.",
+    "estado": "En revisión",
+    "prioridad": "Alta",
+    "metadatos_tecnicos": {
+      "codigo_error_obd": "P0301",
+      "kilometraje": 120000,
+      "temperatura_motor": "94C",
+      "nivel_aceite": "Bajo",
+      "prueba_compresion": "Pendiente"
+    },
+    "fecha_creacion": "2026-06-01T10:30:00.000Z"
+  },
+  {
+    "id_reparacion_mysql": 2,
+    "titulo": "Fallo eléctrico intermitente",
+    "descripcion": "Las luces interiores fallan de forma aleatoria. Se sospecha de falso contacto en fusiblera o cableado interior.",
+    "estado": "Pendiente",
+    "prioridad": "Media",
+    "metadatos_tecnicos": {
+      "voltaje_bateria": "12.4V",
+      "fusibles_revisados": true,
+      "zona_afectada": "Iluminación interior",
+      "requiere_osciloscopio": false
+    },
+    "fecha_creacion": "2026-06-02T09:15:00.000Z"
+  },
+  {
+    "id_reparacion_mysql": 3,
+    "titulo": "Mantenimiento periódico finalizado",
+    "descripcion": "Se realiza revisión de aceite, filtros y niveles. No se detectan averías adicionales.",
+    "estado": "Resuelto",
+    "prioridad": "Baja",
+    "metadatos_tecnicos": {
+      "aceite_usado": "5W30",
+      "filtro_aceite": "Sustituido",
+      "filtro_aire": "Sustituido",
+      "nivel_refrigerante": "Correcto"
+    },
+    "fecha_creacion": "2026-06-03T12:00:00.000Z"
+  },
+  {
+    "id_reparacion_mysql": 4,
+    "titulo": "Vibración en frenada",
+    "descripcion": "Se detecta vibración al frenar a velocidad alta. Posible deformación de discos delanteros.",
+    "estado": "En revisión",
+    "prioridad": "Crítica",
+    "metadatos_tecnicos": {
+      "eje_afectado": "Delantero",
+      "desgaste_pastillas": "70%",
+      "estado_discos": "Posible alabeo",
+      "prueba_carretera": true
+    },
+    "fecha_creacion": "2026-06-04T16:45:00.000Z"
+  },
+  {
+    "id_reparacion_mysql": 5,
+    "titulo": "Diagnosis preventiva sin errores",
+    "descripcion": "La revisión preventiva no muestra códigos de error activos. Se recomienda revisión habitual en 10.000 km.",
+    "estado": "Resuelto",
+    "prioridad": "Media",
+    "metadatos_tecnicos": {
+      "codigos_error": [],
+      "kilometros_hasta_revision": 10000,
+      "estado_bateria": "Correcto",
+      "observaciones": "Vehículo apto para viaje largo"
+    },
+    "fecha_creacion": "2026-06-05T11:20:00.000Z"
+  }
+]

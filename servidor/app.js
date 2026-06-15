@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
+const conectarMongoDB = require("./config/mongodb");
+
 const { sequelize } = require("./models");
 
 const app = express();
@@ -13,11 +15,13 @@ const clientesRoutes = require("./routes/clientes.routes");
 const vehiculosRoutes = require("./routes/vehiculos.routes");
 const mecanicosRoutes = require("./routes/mecanicos.routes");
 const reparacionesRoutes = require("./routes/reparaciones.routes");
+const diagnosticosRoutes = require("./routes/diagnosticos.routes");
 
 app.use("/api/clientes", clientesRoutes);
 app.use("/api/vehiculos", vehiculosRoutes);
 app.use("/api/mecanicos", mecanicosRoutes);
 app.use("/api/reparaciones", reparacionesRoutes);
+app.use("/api/diagnosticos", diagnosticosRoutes);
 
 const PORT = process.env.PORT || 3000;
 
@@ -50,7 +54,9 @@ const iniciarServidor = async () => {
     await sequelize.authenticate();
     console.log("Conexión a MySQL correcta");
 
-    await sequelize.sync({ alter: true });
+    await conectarMongoDB();
+
+    await sequelize.sync();
     console.log("Modelos sincronizados con MySQL");
 
     app.listen(PORT, () => {
