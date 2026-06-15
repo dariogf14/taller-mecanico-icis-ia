@@ -1,0 +1,27 @@
+# Dependencias
+node_modules/
+cliente/node_modules/
+servidor/node_modules/
+
+# Variables de entorno
+.env
+cliente/.env
+servidor/.env
+
+# Builds
+dist/
+cliente/dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# VS Code opcional
+.vscode/
