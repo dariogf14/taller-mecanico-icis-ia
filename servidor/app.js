@@ -2,10 +2,22 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
+const { sequelize } = require("./models");
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+const clientesRoutes = require("./routes/clientes.routes");
+const vehiculosRoutes = require("./routes/vehiculos.routes");
+const mecanicosRoutes = require("./routes/mecanicos.routes");
+const reparacionesRoutes = require("./routes/reparaciones.routes");
+
+app.use("/api/clientes", clientesRoutes);
+app.use("/api/vehiculos", vehiculosRoutes);
+app.use("/api/mecanicos", mecanicosRoutes);
+app.use("/api/reparaciones", reparacionesRoutes);
 
 const PORT = process.env.PORT || 3000;
 
@@ -15,13 +27,38 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/api/health", (req, res) => {
-  res.json({
-    estado: "ok",
-    servicio: "servidor taller mecánico",
-  });
+app.get("/api/health", async (req, res) => {
+  try {
+    await sequelize.authenticate();
+
+    res.json({
+      estado: "ok",
+      servicio: "servidor taller mecánico",
+      mysql: "conectado",
+    });
+  } catch (error) {
+    res.status(500).json({
+      estado: "error",
+      mensaje: "Error al conectar con MySQL",
+      error: error.message,
+    });
+  }
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor escuchando en http://localhost:${PORT}`);
-});
+const iniciarServidor = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log("Conexión a MySQL correcta");
+
+    await sequelize.sync({ alter: true });
+    console.log("Modelos sincronizados con MySQL");
+
+    app.listen(PORT, () => {
+      console.log(`Servidor escuchando en http://localhost:${PORT}`);
+    });
+  } catch (error) {
+    console.error("Error al iniciar el servidor:", error.message);
+  }
+};
+
+iniciarServidor();
